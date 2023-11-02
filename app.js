@@ -7,21 +7,29 @@ const fetchPokemon = async (pokemon) => {
     return data;
 }
 
+
+let pokemon;
+const pokemonImg = document.querySelector('#pokemon-img');
+
 document.querySelector('#select-pokemon').addEventListener('change', async (event) => {
-    let pokemon;
     const pokemonName = document.querySelector('#pokemon-name');
     try {
         pokemon = await fetchPokemon(event.target.value);
+        if (pokemon) {
+            shinyBtn.classList.remove('disabled')
+        }
     } catch (error) {
         pokemonName.textContent = "Ups! I can't find the pokemon! Please, try again later!"
         console.error(error);
     }
     pokemonName.textContent = pokemon.name;
-    const pokemonImg = document.querySelector('#pokemon-img');
     pokemonImg.src = pokemon.sprites.front_default;
     pokemonImg.classList.remove('d-none');
-    
-    document.querySelector('#pokemon-shiny').addEventListener('click', () => {
-        pokemonImg.src = pokemon.sprites.front_shiny;
-    })
+
+})
+
+const shinyBtn = document.querySelector('#pokemon-shiny')
+
+shinyBtn.addEventListener('click', () => {
+    pokemonImg.src = pokemon.sprites.front_shiny;
 })
