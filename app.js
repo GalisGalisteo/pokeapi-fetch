@@ -10,7 +10,7 @@ const fetchPokemons = async () => {
 const fetchPokemon = async (url) => {
     const response = await fetch(url);
     if (!response.ok) {
-        throw new Error('Error fetching teh pokemon');
+        throw new Error('Error fetching the pokemon');
     }
     const data = await response.json();
     return data;
