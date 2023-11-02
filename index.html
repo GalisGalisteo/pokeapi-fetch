@@ -12,10 +12,10 @@
 <body>
     <div class="container mb-3">
         <div class="card" style="width: 18rem;">
-            <img class="card-img-top d-none" src="" alt="Card image cap" data-shiny-url="">
+            <img id="pokemon-img" class="card-img-top d-none" src="" alt="Card image cap" data-shiny-url="">
             <div class="card-body">
-                <h5 class="card-title" style=" text-transform: capitalize;">Lorepokemon</h5>
-                <a href="#" class="btn btn-success">Change to Shiny</a>
+                <h5 id="pokemon-name" class="card-title" style=" text-transform: capitalize;">Lorepokemon</h5>
+                <a id="pokemon-shiny" href="#" class="btn btn-success">Change to Shiny</a>
             </div>
         </div>
     </div>
@@ -31,6 +31,7 @@
         </div>
     </div>
 </body>
+<script src="app.js"></script>
 <script>
     // 1. Cuando cambie el valor del selector, tenemos que detectar que opción hemos escogido. Probad que sois capaces de recuperar el valor seleccionado por el usuario con un console.log
 
@@ -40,6 +41,8 @@
 
     // 3. Utilizar la función fetch para hacer la llamada a esa URL
     // y procesar los datos. Significa, asignar al <h5> del DOM el nombre del pokemon que hemos recuperado de la llamada. Y en la etiqueta <img> debemos establecer el atricuto 'src' con el valor de la URL donde se ubica la imagen del pokemon
+
+    
 </script>
 
 </html>
